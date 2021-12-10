@@ -70,6 +70,10 @@ if diff_percent > 1:
 with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.starttls()
     connection.login(MY_Email, PASSWORD)
+    connection.sendmail(
+        from_addr=MY_Email,
+        to_addrs="Your email"
+    )
 
 
 #Optional TODO: Format the message like this: 
