@@ -1,7 +1,11 @@
 import requests
+import smtplib
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
+
+MY_Email = "sheida.yous1@gmail.com"
+PASSWORD = ""
 
 STOCK_API_KEY = "WZGJSAA19BKXGYR8"
 NEWS_API_KEY = "623b98fedf0a480d87ff2690f207e338"
@@ -63,6 +67,9 @@ if diff_percent > 1:
 
 #TODO 9. - Send each article as a separate message via Twilio. 
 
+with smtplib.SMTP("smtp.gmail.com") as connection:
+    connection.starttls()
+    connection.login(MY_Email, PASSWORD)
 
 
 #Optional TODO: Format the message like this: 
